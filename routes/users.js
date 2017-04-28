@@ -69,17 +69,29 @@ router.post('/:id/view_dinner', function(req, res, next) {
 
 // Edit user profile on suggest_dinner
 router.post('/:id/suggest_dinner', function(req, res, next) {
-  knex.raw(`SELECT * from users WHERE id = ${req.params.id}`)
-  .then(function (user) {
-    knex.raw(`UPDATE users SET
-              name = '${req.body.name}',
-              email = '${req.body.email}',
-              about = '${req.body.about}'
-              WHERE id = ${req.params.id}`).then(function () {
+  knex.raw(`INSERT INTO suggestions VALUES (DEFAULT, FALSE, '${req.body.meal_name}', ${req.params.id}, DEFAULT)`).then(function () {
+    knex.raw(`SELECT * from users WHERE id = ${req.params.id}`)
+    .then(function (user) {
       res.render('users/suggested', {
         user: user.rows[0],
         message: "Your information has been recorded."
       });
+    });
+  });
+});
+
+router.post('/:id/edit_user', function(req, res, next) {
+  knex.raw(`UPDATE users SET
+            name = '${req.body.name}',
+            email = '${req.body.email}',
+            about = '${req.body.about}'
+            WHERE id = ${req.params.id}`).then(function () {
+              knex.raw(`SELECT * from users WHERE id = ${req.params.id}`)
+              .then(function (user) {
+              res.render('users/suggested', {
+                user: user.rows[0],
+                message: "Your information has been recorded."
+              });
     });
   });
 });
