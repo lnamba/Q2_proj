@@ -1,32 +1,82 @@
-<h1>Welcome <%= user.name %>!</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Suggest Dinner</title>
+</head>
+
+<body>
 
 
-<div id="greeting_menu" class="user_div">
-  <h2>What do you want for dinner?</h2>
-  <h2>I want: </h2>
-  <form action="/suggestions/<%= user.id %>" method="post">
-    <input type="text" name="meal_name" placeholder="Your request here.">
-    <input type="submit" name="submit" value="Make Suggestion">
-  </form>
-</div>
 
-<div id="edit_user" class="user_div">
-  <h2>Edit User Info</h2>
-  <form action="/users/<%= user.id %>/suggest_dinner" method="post">
-    <label for="name">Name: </label>
-    <input type="text" name="name" class="user_input" value="<%= user.name %>">
-    <label for="email">Email: </label>
-    <input type="text" name="email" class="user_input" value="<%= user.email %>">
-    <label for="about">About: </label>
-    <textarea name="about" rows="3" cols="80" class="user_input"><%= user.about %></textarea>
-    <input type="submit" name="edit" value="Edit" class="user_input">
-  </form>
-</div>
+    <!-- Col#1 Starts -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
 
-<form action="/users/<%= user.id %>/delete" method="post">
-  <input type="submit" name="delete" value="Delete Account">
-</form>
 
-<script type="text/javascript">
+        <!-- Col#1 Ends -->
 
-</script>
+        <!-- Menu Card Section Starts -->
+        <section id="menu" class="section-area inverse menu-card-section parallax">
+            <!-- Nested Container Starts -->
+            <div class="container">
+                <!-- Heading Starts -->
+                <h1 class="section-main-heading inverse text-center"><span>Welcome, <%= user.name %>!</span></h1>
+                <!-- Heading Ends -->
+                <!-- Spacer Starts -->
+                <div class="spacer-small"></div>
+                <!-- Spacer Ends -->
+                <!-- Nested Row Starts -->
+                <div class="row">
+                    <!-- Left Col Starts -->
+                    <div class="col-sm-4 col-xs-12">
+
+                        <div id="greeting_menu" class="user_div">
+
+
+                            <h2>What do you want for dinner?</h2>
+                            <h2>I want: </h2>
+                            <form action="/suggestions/<%= user.id %>" method="post">
+                                <input type="text" name="meal_name" placeholder="Your request here.">
+                                <input type="submit" name="submit" value="Make Suggestion">
+                            </form>
+                        </div>
+
+                        <div id="edit_user" class="user_div">
+                            <h2>Edit User Info</h2>
+                            <form action="/users/<%= user.id %>/suggest_dinner" method="post">
+                                <label for="name">Name: </label>
+                                <input type="text" name="name" class="user_input" value="<%= user.name %>">
+                                <label for="email">Email: </label>
+                                <input type="text" name="email" class="user_input" value="<%= user.email %>">
+                                <label for="about">About: </label>
+                                <textarea name="about" rows="3" cols="80" class="user_input"><%= user.about %></textarea>
+                                <input type="submit" name="edit" value="Edit" class="user_input">
+                            </form>
+                        </div>
+
+                        <form action="/users/<%= user.id %>/delete" method="post">
+                            <input type="submit" name="delete" value="Delete Account">
+                        </form>
+
+                        <script type="text/javascript">
+                        </script>
+
+                        </div>
+
+                    </div>
+
+                    </ul>
+                    <!-- Our Menu List #4 Ends -->
+                </div>
+                <!-- Right Col Ends -->
+            </div>
+            <!-- Nested Row Ends -->
+    </div>
+    <!-- Nested Container Ends -->
+    </section>
+    <!-- Menu Card Section Ends -->
+
+</body>
+
+</html>
