@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
 
-// /* GET users listing. */
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('Respond with a resource!');
+});
 
 // Show userpage if accept_meal = true
 router.get('/:id/view_dinner', function(req, res, next) {
@@ -87,10 +87,9 @@ router.post('/:id/suggest_dinner', function(req, res, next) {
 //Delete a user
 router.post('/:id/delete', function (req, res, next) {
   knex.raw(`DELETE from users WHERE id=${req.params.id}`).then(function(users) {
-    res.render('users/delete', {
-      message: "Your account has been deleted."
-    });
+    res.redirect('/');
   });
 });
+
 
 module.exports = router;
