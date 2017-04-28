@@ -7,6 +7,11 @@ var knex = require('../db/knex');
 //   res.send('respond with a resource');
 // });
 
+router.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 // Show userpage if accept_meal = true
 router.get('/:id/view_dinner', function(req, res, next) {
   knex.raw(`SELECT * from users WHERE id = ${req.params.id}`)

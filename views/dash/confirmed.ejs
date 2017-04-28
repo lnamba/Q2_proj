@@ -1,8 +1,51 @@
-<h1>Thank you</h1>
+<body style="margin: 0">
 
-<h3><%= message %></h3>
-<a href="/dash/<%= superuser %>"><button type="button" name="button">Back to Profile</button></a>
+    <!-- Col#1 Starts -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
 
-<script type="text/javascript">
+        <!-- Col#1 Ends -->
 
-</script>
+        <!-- Menu Card Section Starts -->
+        <section id="menu" class="section-area inverse menu-card-section parallax">
+            <!-- Nested Container Starts -->
+            <div class="container">
+                <!-- Heading Starts -->
+                <h1 class="section-main-heading inverse text-center">
+                <!-- Heading Ends -->
+                <!-- Spacer Starts -->
+                <div class="spacer-small"></div>
+                <!-- Spacer Ends -->
+                <!-- Nested Row Starts -->
+                <div class="row">
+                    <!-- Left Col Starts -->
+                    <div class="col-sm-4 col-xs-12">
+
+                        <div id="greeting_menu" class="user_div">
+
+                          <h1>Thank you, <%= user.name %>!</h1>
+
+                          <h3><%= message %></h3>
+                          <a href="/dash/<%= user.id %>"><button type="button" name="button">Back to Profile</button></a>
+
+                          <script type="text/javascript">
+
+                          </script>
+
+                        </div>
+
+                    </div>
+
+                    </ul>
+                    <!-- Our Menu List #4 Ends -->
+                </div>
+                <!-- Right Col Ends -->
+            </div>
+            <!-- Nested Row Ends -->
+    </div>
+    <!-- Nested Container Ends -->
+    </section>
+    <!-- Menu Card Section Ends -->
+
+</body>
+
+</html>
