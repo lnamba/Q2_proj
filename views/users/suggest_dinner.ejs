@@ -2,21 +2,48 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Suggest Dinner</title>
-</head>
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Let's Eat!</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+
+    <!-- Template CSS Files  -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="js/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="js/plugins/owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+  		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  		<![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/fav-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/fav-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/fav-72.png">
+    <link rel="apple-touch-icon-precomposed" href="images/fav-57.png">
+    <link rel="shortcut icon" href="images/fav.png">
+
+</head>
 <body>
 
-
-
-    <!-- Col#1 Starts -->
-    <div class="col-md-3 col-sm-6 col-xs-12">
-
-
-        <!-- Col#1 Ends -->
-
-        <!-- Menu Card Section Starts -->
+        <!--Section Starts -->
         <section id="menu" class="section-area inverse menu-card-section parallax">
             <!-- Nested Container Starts -->
             <div class="container">
@@ -53,30 +80,30 @@
                                 <textarea name="about" rows="3" cols="80" class="user_input"><%= user.about %></textarea>
                                 <input type="submit" name="edit" value="Edit" class="user_input">
                             </form>
-                        </div>
 
-                        <form action="/users/<%= user.id %>/delete" method="post">
-                            <input type="submit" name="delete" value="Delete Account">
-                        </form>
+                        </div>
+                        <div class="">
+
+                            <form action="/users/<%= user.id %>/delete" method="post">
+                                <input type="submit" name="delete" value="Delete Account">
+                            </form>
+                            <br>
+                            <br>
+                        </div>
 
                         <script type="text/javascript">
                         </script>
 
-                        </div>
-
                     </div>
-
-                    </ul>
-                    <!-- Our Menu List #4 Ends -->
                 </div>
-                <!-- Right Col Ends -->
+                </ul>
             </div>
-            <!-- Nested Row Ends -->
+            <!-- Right Col Ends -->
+    </div>
+    <!-- Nested Row Ends -->
     </div>
     <!-- Nested Container Ends -->
     </section>
-    <!-- Menu Card Section Ends -->
-
 </body>
 
 </html>
