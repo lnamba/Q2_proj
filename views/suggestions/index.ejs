@@ -72,11 +72,85 @@
 
 
 <% var cookie_accept = cookie_accept %>
+
+<style media="screen">
+  body {
+    width: 100vw;
+    margin: 0
+  }
+
+  .suggestion_table {
+    border-spacing: 0;
+    color: #FFF;
+    background-color: #2295A7;
+    margin: 20px auto;
+    width: 300px;
+    border: 2px solid #000;
+  }
+
+  .suggestion_table td {
+    padding: 15px;
+    font-size: 1.3em;
+    border: 2px solid #000;
+  }
+
+  .suggestion_table a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .suggestion_table a:hover {
+    font-weight: bold;
+  }
+
+  #edit_user {
+    max-width: 50vw;
+    /*border: 3px solid white;*/
+  }
+
+
+</style>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Suggest Dinner</title>
+</head>
+
+<body>
+
+
+
+    <!-- Col#1 Starts -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+
+
+        <!-- Col#1 Ends -->
+
+        <!-- Menu Card Section Starts -->
+        <section id="menu" class="section-area inverse menu-card-section parallax">
+            <!-- Nested Container Starts -->
+            <div class="container">
+                <!-- Heading Starts -->
+                <h1 class="section-main-heading inverse text-center"><span>Welcome, <%= user.name %>!</span></h1>
+                <!-- Heading Ends -->
+                <!-- Spacer Starts -->
+                <div class="spacer-small"></div>
+                <!-- Spacer Ends -->
+                <!-- Nested Row Starts -->
+                <div class="row">
+                    <!-- Left Col Starts -->
+                    <div class="col-sm-4 col-xs-12">
+
+                        <div id="greeting_menu" class="user_div">
+
 <h1><%= title %></h1>
 
 
 <% if (cookie_accept) { %>
-  <table id="suggestion_table">
+  <table class="suggestion_table">
     <thead>
       <tr>
         <td>Meal</td>
@@ -100,7 +174,7 @@
 
 <% } else { %>
 
-  <table id="suggestion_table">
+  <table class="suggestion_table">
     <thead>
       <tr>
         <td>Meal</td>
@@ -136,6 +210,25 @@
       <input type="submit" name="edit" value="Edit" class="user_input">
     </form>
   </div>
+
+</div>
+
+</div>
+
+</ul>
+<!-- Our Menu List #4 Ends -->
+</div>
+<!-- Right Col Ends -->
+</div>
+<!-- Nested Row Ends -->
+</div>
+<!-- Nested Container Ends -->
+</section>
+<!-- Menu Card Section Ends -->
+
+</body>
+
+</html>
 
   <script type="text/javascript">
 
