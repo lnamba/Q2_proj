@@ -101,7 +101,8 @@ body {
               <tr>
               <td><%= suggestions[i].meal_name %></td>
               <td><%= users_name[i].name %></td>
-              <td><form action="/suggestions/<%= suggestions[i].id %>/accepted" method="post"><input type="submit" value="Accept"></form></td>
+
+              <td><form action="/suggestions/<%= suggestions[i].id %>/accepted" method="post"><input type="hidden" name="id" value="<%= user.id %>"><input type="submit" value="Accept"></form></td>
               </tr>
             <% } %>
 
