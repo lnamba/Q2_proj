@@ -1,0 +1,79 @@
+<% var cookie_accept = cookie_accept %>
+
+<h1>Welcome <%= user.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Delete User</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (var i = 0; i < all_users.length; i++) { %>
+      <tr><td><%= all_users[i].name %></td><td><%= all_users[i].email %></td><td><a href="/dash/<%= all_users[i].id %>/delete">DELETE</a></td></tr>
+    <% } %>
+  </tbody>
+</table>
+
+<% if (cookie_accept) { %>
+  <table id="dash_table">
+    <thead>
+      <tr>
+        <td>Meal</td>
+        <td>Suggested By</td>
+        <td>Accept</td>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% for (var i = 0; i < suggestions.length; i++) { %>
+        <tr><td><%= suggestions[i].meal_name %></td><td><%= users_name[i].name %></td><td>Meal Already Selected</td></tr>
+      <% } %>
+
+    </tbody>
+  </table>
+
+  <form action="/dash/undo" method="post">
+    <input type="hidden" value="<%= user.id %>" name="id">
+    <input type="submit" value="Undo" name="submit">
+  </form>
+
+<% } else { %>
+
+  <table id="dash_table">
+    <thead>
+      <tr>
+        <td>Meal</td>
+        <td>Suggested By</td>
+        <td>Accept</td>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% for (var i = 0; i < suggestions.length; i++) { %>
+        <tr><td><%= suggestions[i].meal_name %></td><td><%= users_name[i].name %></td><td><form action="/dash/<%= suggestions[i].id %>/accepted" method="post"><input type="submit" value="Accept"></form></td></tr>
+      <% } %>
+
+    </tbody>
+  </table>
+<% } %>
+
+
+  <div id="edit_user" class="user_div">
+    <h2>Edit User Info</h2>
+    <form action="/dash/<%= user.id %>/edit" method="post">
+      <label for="name">Name: </label>
+      <input type="text" name="name" class="user_input" value="<%= user.name %>">
+      <label for="email">Email: </label>
+      <input type="text" name="email" class="user_input" value="<%= user.email %>">
+      <label for="about">About: </label>
+      <textarea name="about" rows="3" cols="80" class="user_input"><%= user.about %></textarea>
+      <input type="submit" name="edit" value="Edit" class="user_input">
+    </form>
+  </div>
+
+  <script type="text/javascript">
+
+  </script>
