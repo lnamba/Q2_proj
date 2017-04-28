@@ -42,7 +42,7 @@ router.post('/:id/accepted', function(req, res, next) {
   knex.raw(`UPDATE suggestions SET accept_meal = TRUE WHERE id = ${req.params.id}`)
   .then(function() {
     res.cookie('accepted_meal', true);
-    res.redirect(`/dash/${req.params.id}`)
+    res.redirect(`/dash/${superuser}`)
   })
 })
 
