@@ -4,9 +4,7 @@ var knex = require('../db/knex');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', {
-    layout: 'layout.ejs'
-  });
+  res.render('index');
 });
 
 
@@ -36,11 +34,11 @@ router.post('/', function(req, res, next) {
 });
 
 
-//Route for logout function
-router.get('/logout', function(req, res, next) {
-  res.clearCookie("login");
-res.render("/", {button_text: "log in", notice: "You must sign in again to view your dinner plans"});
-});
+// //Route for logout function
+// router.get('/logout', function(req, res, next) {
+//   res.clearCookie("login");
+// res.render("/", {button_text: "log in", notice: "You must sign in again to view your dinner plans"});
+// });
 
 
 //route for the form on the add user page

@@ -45,7 +45,9 @@
                           <% console.log(meal) %>
 
                           <div id="greeting_menu" class="user_div">
-                            <h2><%= meal.charAt(0).toUpperCase() %><%= meal.slice(1) %> tonight!</h2>
+                            <h2><%= meal.charAt(0).toUpperCase() %><%= meal.slice(1) %> <br> for dinner tonight!</h2>
+                          </div>
+
                           </div>
 
                           <div id="edit_user" class="user_div">
@@ -65,15 +67,6 @@
                             <input type="submit" name="delete" value="Delete Account">
                           </form>
 
-                          <script type="text/javascript">
-                            var meal = '<%= meal %>'
-                            console.log(meal);
-                            $.getJSON(`https://api.edamam.com/search?q=${meal}/`, function(data) {
-                              $('#greeting_menu').append(`<img id="meal_img" src="${data.hits[0].recipe.image}">`)
-                              console.log(data.hits[0].recipe.label);
-                            });
-                          </script>
-
                         </div>
 
                     </div>
@@ -90,5 +83,13 @@
     <!-- Menu Card Section Ends -->
 
 </body>
-
+<script type="text/javascript">
+  var meal = '<%= meal %>'
+  console.log(meal);
+  $.getJSON(`https://api.edamam.com/search?q=${meal}/`, function(data) {
+    console.log($('#greeting_menu'));
+    $('#greeting_menu').append(`<img id="meal_img" src="${data.hits[0].recipe.image}">`)
+    console.log(data.hits[0].recipe.label);
+  });
+</script>
 </html>
