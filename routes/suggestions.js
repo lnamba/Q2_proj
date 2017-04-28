@@ -70,7 +70,12 @@ router.post('/:id/edit', function(req, res, next) {
 router.post('/:id', function(req, res, next) {
   knex.raw(`INSERT INTO suggestions VALUES (DEFAULT, FALSE, '${req.body.meal_name}', ${req.params.id}, DEFAULT)`)
   .then(function() {
-    res.redirect(`/users/${req.params.id}/suggest_dinner`);
+    knex.raw(`SELECT * FROM users WHERE id = ${req.params.id}`).then(function(user) {
+      res.render('suggestions/confirmed', {
+        user:user.rows[0],
+        message: "Your information has been recorded."
+      })
+    })
   });
 });
 
@@ -78,8 +83,10 @@ router.post('/:id', function(req, res, next) {
 router.post('/:id/accepted', function(req, res, next) {
   knex.raw(`UPDATE suggestions SET accept_meal = TRUE WHERE id = ${req.params.id}`)
   .then(function() {
-    res.cookie('accepted_meal', true);
-    res.redirect(`/suggestions/${req.params.id}`)
+    knex.raw(`SELECT * FROM users WHERE id = ${req.params.id}`).then(function(user) {
+      res.cookie('accepted_meal', true);
+      res.redirect(`/suggestions/${req.params.id}`)
+    });
   });
 });
 
