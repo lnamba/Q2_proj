@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Suggest Dinner</title>
+    <title>View Dinner</title>
 </head>
 
 <body>
@@ -11,7 +11,7 @@
 
 
     <!-- Col#1 Starts -->
-    <div class="col-md-3 col-sm-6 col-xs-12">
+    <%# <div class="col-md-3 col-sm-6 col-xs-12">%>
 
 
         <!-- Col#1 Ends -->
@@ -34,7 +34,7 @@
                         <div id="greeting_menu" class="user_div">
 
 
-                          
+
                           <% var meal = '' %>
                           <% for (var i = 0; i < suggestions.length; i++) { %>
                             <% if (suggestions[i].accept_meal) { %>
