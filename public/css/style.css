@@ -4,6 +4,10 @@ body {
 	background: #fff;
 }
 
+input, textarea {
+ color: black;
+}
+
 /* Standard Styles Starts */
 
 a { color: #2eb0c0; }
