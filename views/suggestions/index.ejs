@@ -38,11 +38,25 @@ body {
   font-size: 20px;
 }
 
-input, textarea {
- color: black;
-}
 
 </style>
+<!--Section Starts -->
+<section id="menu" class="section-area inverse menu-card-section parallax">
+    <!-- Nested Container Starts -->
+    <div class="container">
+        <!-- Heading Starts -->
+        <h1 class="section-main-heading inverse text-center"><span>Welcome, <%= user.name %>!</span></h1>
+        <!-- Heading Ends -->
+        <!-- Spacer Starts -->
+        <div class="spacer-small"></div>
+        <!-- Spacer Ends -->
+        <!-- Nested Row Starts -->
+        <div class="row">
+            <!-- Left Col Starts -->
+            <div class="col-sm-4 col-xs-12">
+
+                <div id="greeting_menu" class="user_div">
+
 
 <h1><%= title %></h1>
 
@@ -65,7 +79,7 @@ input, textarea {
     </tbody>
   </table>
 
-  <form id="undo" action="/suggestions/undo" method="post">
+  <form action="/suggestions/undo" method="post">
     <input type="hidden" value="<%= user.id %>" name="id">
     <input type="submit" value="Undo" name="submit">
   </form>
@@ -108,3 +122,14 @@ input, textarea {
       <input type="submit" name="edit" value="Edit" class="user_input">
     </form>
   </div>
+
+</div>
+</div>
+</ul>
+</div>
+<!-- Right Col Ends -->
+</div>
+<!-- Nested Row Ends -->
+</div>
+<!-- Nested Container Ends -->
+</section>
