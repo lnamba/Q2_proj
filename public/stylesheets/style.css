@@ -893,7 +893,6 @@ h6 { font-size: 18px; }
 			box-shadow: none;
 }
 
-
 .user_div {
   border: solid 2px black;
   max-width: 75vw;
@@ -960,16 +959,4 @@ h6 { font-size: 18px; }
 	-webkit-transition: all 1s ease;
 	   -moz-transition: all 1s ease;
 		    transition: all 1s ease;
-}
-
-/*Group Styles*/
-#dash_table {
-	border-spacing: 0;
-  margin: 20px;
-  color: #FFF;
-  background-color: #000;
-}
-
-table > td {
-
 }
